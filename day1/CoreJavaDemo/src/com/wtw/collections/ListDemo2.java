@@ -1,0 +1,47 @@
+package com.wtw.collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+import com.wtw.model.Customer;
+
+public class ListDemo2 {
+	public static void main(String a[]) {
+		List<Customer> cst = new ArrayList();
+		cst.add(new Customer("Parth","Laptop",11,110000));
+		cst.add(new Customer("Yash","Headset",201,50000));
+		cst.add(new Customer("Raj","Motherboard",101,30000));
+		cst.add(new Customer("Adi","Keyboard",401,900));
+		
+		for(Customer i : cst)
+			System.out.println((i));
+		
+		//Implementing Comparable in Customer Class for sorting
+		System.out.println("After Sorting Using Comparable");
+		Collections.sort(cst);
+		for(Customer i : cst)
+			System.out.println((i));
+		
+		//Sorting using Comparator
+		System.out.println("Sorting Using Comparator");
+		Collections.sort(cst, new Comparator() {
+
+			@Override
+			public int compare(Object o1, Object o2) {
+				// TODO Auto-generated method stub
+				Customer c1 = (Customer)o1;
+				Customer c2 = (Customer)o2;
+				if(c1.getAmount() > c2.getAmount())
+					return 1;
+				else
+					return -1;
+				
+			}
+			});
+		for(Customer i : cst)
+			System.out.println((i));
+		
+	}
+}

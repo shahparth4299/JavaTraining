@@ -1,0 +1,5 @@
+package com.wtw.inheritance;
+
+public class Payment {
+
+}

@@ -1,0 +1,5 @@
+package com.wtw.model;
+
+public class Customer {
+
+}

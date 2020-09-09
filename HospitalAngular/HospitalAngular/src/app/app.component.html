@@ -1,0 +1,67 @@
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">
+    LifeLine Hospital
+  </a>
+</nav>
+<div class="container">
+<div align="center">Insert</div>
+
+<form>
+  <label for="exampleInputEmail1">Doctor Id</label>
+  <input type="number" class="form-control" [(ngModel)]="doctorobj.id" value="" name="name" /><br>
+  <label for="exampleInputEmail1">Doctor Name</label>
+  <input type="text" class="form-control" [(ngModel)]="doctorobj.name" value="" name="name" /><br>
+  <label for="exampleInputEmail1">Doctor Email</label>
+  <input type="text" class="form-control" [(ngModel)]="doctorobj.email" value="" name="name" /><br>
+  <label for="exampleInputEmail1">Doctor Age</label>
+  <input type="number" class="form-control" [(ngModel)]="doctorobj.age" value="" name="name" /><br>
+  <label for="exampleInputEmail1">Education</label>
+  <input type="text" class="form-control" [(ngModel)]="doctorobj.education" value="" name="name" /><br>
+  <label for="exampleInputEmail1">Salary</label>
+  <input type="number" class="form-control" [(ngModel)]="doctorobj.salary" value="" name="name" /><br>
+  <div align="center">
+    <input type="button" class="btn btn-success" name="name" value="Insert Record" (click)="Insert()"/>
+  </div>
+</form>
+
+<br>
+<form>
+        <label for="exampleInputEmail1">Enter Id</label>
+        <input type="number" class="form-control" [(ngModel)]="doctorobj.id" value="" name="name" /><br>
+        <input align="left" type="button" class="btn btn-danger" name="name" value="Delete Record" (click)="Delete()"/>
+        <input style="margin-left: 29%" type="button" class="btn btn-primary" name="name" value="Find Record" (click)="Search()"/>
+        <input  style="margin-left: 29%" type="button" class="btn btn-success" name="name" value="Display Records" (click)="Display()"/><br>
+</form>
+<br><br>
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item">{{doctorobj.name}}</li>
+    <li class="list-group-item">{{doctorobj.age}}</li>
+    <li class="list-group-item">{{doctorobj.email}}</li>
+    <li class="list-group-item">{{doctorobj.education}}</li>
+    <li class="list-group-item">{{doctorobj.salary}}</li>
+  </ul>
+<br>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Specialization</th>
+        <th scope="col">Email</th>
+        <th scope="col">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let temp of doctorobjs">
+        <td>{{temp.id}}</td>
+        <td>{{temp.name}}</td>
+        <td>{{temp.age}}</td>
+        <td>{{temp.education}}</td>
+        <td>{{temp.email}}</td>
+        <td>{{temp.salary}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
